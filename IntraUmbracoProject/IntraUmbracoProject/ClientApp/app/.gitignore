@@ -1,0 +1,86 @@
+.DS_Store
+node_modules
+/dist
+
+
+# local env files
+.env.local
+.env.*.local
+
+# Log files
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+
+node_modules/
+dist/
+.build/
+.coverage/
+.nuxt/
+
+# Log files
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# Editor directories and files
+.idea
+.vscode
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+*.sublime*
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# Debugging files
+*.pdb
+*.map
+
+# Production files
+*.min.js
+*.min.css
+
+# Cache files
+.cache/
+# Temporary files
+.tmp/
+temp/
+
+# OS generated files
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+ehthumbs.db
+Thumbs.db
+
+# Umbraco specific files not to track
+/App_Data/cache/
+/App_Data/logs/
+/App_Data/TEMP/
+/App_Data/Models/
+/App_Data/nupkg/
+umbraco.config
+*.user
+*.userprefs
+/packages/
+/umbraco_client/
+/umbraco/
