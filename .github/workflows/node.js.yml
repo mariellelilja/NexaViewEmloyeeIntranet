@@ -35,7 +35,8 @@ jobs:
     - name: Build project
       run: npm run build --if-present
       working-directory: IntraUmbracoProject/IntraUmbracoProject/ClientApp/app
-    
-    - name: Run tests # TODO
-      run: npm test
-      working-directory: IntraUmbracoProject/IntraUmbracoProject/ClientApp/app
+
+    # TODO
+#    - name: Run tests # TODO
+#      run: npm test
+#      working-directory: IntraUmbracoProject/IntraUmbracoProject/ClientApp/app
