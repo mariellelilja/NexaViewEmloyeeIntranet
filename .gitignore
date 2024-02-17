@@ -517,3 +517,5 @@ appsettings-schema.*.json
 
 # Ignore Visual Studio Code directories
 .vscode/
+bin/
+obj/
