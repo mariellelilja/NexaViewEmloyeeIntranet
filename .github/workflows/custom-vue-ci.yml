@@ -1,0 +1,39 @@
+name: Vue.s CI
+
+# Triggered on pushed and PRs
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build-and-test:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - uses: actions/checkout@v2 #checkout and access repo
+
+    - name: Set up Node.js
+      uses: actions/setup-node@v2
+      with:
+        node-version: '14'
+
+    - name: Install dependencies
+      run: npm install
+      working-directory: IntraUmbracoProject/IntraUmbracoProject/ClientApp/app
+
+    - name: Build proj
+      run: npm run build
+      working-directory: IntraUmbracoProject/IntraUmbracoProject/ClientApp/app
+
+# Somewhat unneccessary, but I want to try this:
+    - name: Serve proj for development 
+      run: npm run serve
+      working-directory: IntraUmbracoProject/IntraUmbracoProject/ClientApp/app      
+
+# TODO: set up tests :)
+#    - name: Run tests
+#      run: npm run test
+#      working-directory: IntraUmbracoProject/IntraUmbracoProject/ClientApp/app
+    
