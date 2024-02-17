@@ -26,6 +26,9 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
         cache: 'npm'
+        
+    - name: cd to location of package-lock.json
+      run: cd IntraUmbracoProject/IntraUmbracoProject/ClientApp/app
 
     - name: Install dependencies
       run: npm ci
