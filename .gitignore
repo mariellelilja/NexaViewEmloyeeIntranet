@@ -194,3 +194,5 @@ bld/
 *.exe
 *.out
 *.app
+
+*.tmp
