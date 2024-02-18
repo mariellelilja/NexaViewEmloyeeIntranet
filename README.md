@@ -4,19 +4,19 @@
 ### Run as Umbraco with embedded Vue
 1. Navigate to vue application and build it
 ```
-cd %~dp0\IntraUmbracoProject\IntraUmbracoProject\ClientApp\app
+cd IntraUmbracoProject\IntraUmbracoProject\ClientApp\app
 npm run build
 ```
 2a. Once buildt, navigate to MainPage.cshtml to manually update reference hashes in filenames of the stylesheet tag and script tag...:
 ```
-cd %~dp0\IntraUmbracoProject\IntraUmbracoProject\Views
+cd IntraUmbracoProject\IntraUmbracoProject\Views
 ```
 2b. ...to adhere to file names in wwwroot of Umbraco project, as in the folders css and js: 
 ```
-cd %~dp0\IntraUmbracoProject\IntraUmbracoProject\wwwroot\css
+cd IntraUmbracoProject\IntraUmbracoProject\wwwroot\css
 ```
 ```
-cd %~dp0\IntraUmbracoProject\IntraUmbracoProject\wwwroot\js
+cd IntraUmbracoProject\IntraUmbracoProject\wwwroot\js
 ```
 The file path should look like the following, with a new hash if files are changed:
 - "~/css/app.{hash}.css"
@@ -24,7 +24,7 @@ The file path should look like the following, with a new hash if files are chang
 
 3. Run Umbraco
 ```
-cd %~dp0\IntraUmbracoProject\
+cd IntraUmbracoProject\
 dotnet run
 ```
 
