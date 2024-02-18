@@ -1,4 +1,5 @@
-# NexaView Emloyee Intranet 👥👥💼
+# NexaView Emloyee Intranet 👥👥💼 <img src="IntraUmbracoProject/IntraUmbracoProject/ClientApp/app/src/assets/nw-logo-dark.png" width="60" height="60" alt="NexaView Logo" >
+
 ### A fictive company's intranet build on Umbraco, Razor, and vue.JS, with automating scripts and CI/CD.
 
 ### Run as Umbraco with embedded Vue
