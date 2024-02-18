@@ -22,6 +22,12 @@ The file path should look like the following, with a new hash if files are chang
 - "~/css/app.{hash}.css"
 - "~/js/app.{hash}.js"
 
+3. Run Umbraco
+```
+cd %~dp0\IntraUmbracoProject\
+dotnet run
+```
+
 ### Double automation is in progress 😉⏳
 - automatic changing of these references
 - automatic building and running steps above.
