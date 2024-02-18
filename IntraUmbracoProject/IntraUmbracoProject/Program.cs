@@ -25,4 +25,13 @@ app.UseUmbraco()
         u.UseWebsiteEndpoints();
     });
 
+app.UseStaticFiles();
+
+app.UseRouting();
+
+app.MapControllers();
+
+app.MapFallbackToFile("index.html");
+
+
 await app.RunAsync();
