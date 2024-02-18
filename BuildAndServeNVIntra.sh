@@ -11,7 +11,3 @@ echo "Starting Umbraco project..."
 cd $(dirname "$0")/IntraUmbracoProject
 dotnet run
 echo "Running the Umbraco solution..."
-
-#start YourUmbracoProject.sln
-#echo "Opening up the project in Visual Studio..."
-#echo "If not auto running, click F7! :)"
