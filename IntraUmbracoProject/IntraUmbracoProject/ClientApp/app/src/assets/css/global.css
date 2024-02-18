@@ -143,7 +143,7 @@ img:focus, img:active {
 }
 
 .nvi-btn-primary {
-    background-color: #0052cc;
+    background-color: #3600cc;
     color: white;
     border: none;
     padding: 10px20px;
@@ -155,12 +155,12 @@ img:focus, img:active {
 }
 
     .nvi-btn-primary:hover {
-        background-color: #003d99;
+        background-color: #290099;
         box-shadow: 02px4pxrgba(0, 0, 0, 0.2);
     }
 
 .nvi-btn-secondary {
-    background-color: #f0ad4e;
+    background-color: #3ab49a;
     color: white;
     border: none;
     padding: 10px20px;
@@ -171,7 +171,7 @@ img:focus, img:active {
 }
 
     .nvi-btn-secondary:hover {
-        background-color: #d89a45;
+        background-color: #23725a;
     }
 
 .nvi-btn-tertiary {
