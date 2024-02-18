@@ -1,3 +1,5 @@
+using IntraUmbracoProject.Helpers;
+
 WebApplicationBuilder builder = WebApplication.CreateBuilder(args);
 
 builder.CreateUmbracoBuilder()
@@ -6,6 +8,8 @@ builder.CreateUmbracoBuilder()
     .AddDeliveryApi()
     .AddComposers()
     .Build();
+
+builder.Services.AddSingleton<AssetHelper>();
 
 WebApplication app = builder.Build();
 
