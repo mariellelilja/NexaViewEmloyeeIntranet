@@ -1,5 +1,5 @@
 # NexaView Emloyee Intranet 👥👥💼
-A fictive company's intranet build on Umbraco, Razor, and vue.JS, with automating scripts and CI/CD.
+### A fictive company's intranet build on Umbraco, Razor, and vue.JS, with automating scripts and CI/CD.
 
 ### Run as Umbraco with embedded Vue
 1. Navigate to vue application and build it
