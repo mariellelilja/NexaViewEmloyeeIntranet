@@ -1,24 +1,24 @@
-﻿@using Umbraco.Cms.Web.Common.PublishedModels;
+﻿@inject IntraUmbracoProject.Helpers.AssetHelper AssetHelper
+
+@using Umbraco.Cms.Web.Common.PublishedModels;
 @inherits Umbraco.Cms.Web.Common.Views.UmbracoViewPage<ContentModels.MainPage>
 @using ContentModels = Umbraco.Cms.Web.Common.PublishedModels;
 @{
-	Layout = null;
+    Layout = null;
 }
 
 
 <!DOCTYPE html>
 <html>
 <head>
-    <!--To be manually changed after 'npm run build' until automated: -->
-    <link rel="stylesheet" href="~/css/app.0f394890.css">
-    <link rel="stylesheet" href="~/css/chunk-vendors.7eece550.css">
+    <link rel="stylesheet" href="@AssetHelper.GetAssetPath("css", "app.*.css")">
+    <link rel="stylesheet" href="@AssetHelper.GetAssetPath("css", "chunk-vendors.*.css")">
 </head>
 <body>
     <div id="app">
         <!-- Vue app  -->
     </div>
-    <!--To be manually changed after 'npm run build' until automated: -->
-    <script src="~/js/app.c7ea122a.js"></script>
-    <script src="~/js/chunk-vendors.2911b9d9.js"></script>
+    <script src="@AssetHelper.GetAssetPath("js", "app.*.js")"></script>
+    <script src="@AssetHelper.GetAssetPath("js", "chunk-vendors.*.js")"></script>
 </body>
 </html>
