@@ -1,42 +1,46 @@
 <template>
   <main>
     <div class="main-content">
-      <div v-if="isLoggedIn">
+      <router-view></router-view>
+
+      <!--Temporary demo solution, TODO route to pages instead etc--->
+      <!-- <div v-if="isLoggedIn">
         <LandingDashboard></LandingDashboard>
-
-
-
       </div>
-      <div v-else> <!--Temporary demo solution, TODO route to pages instead etc--->
+      <div v-else> 
         <LoginForm></LoginForm>
-        <RegisterForm></RegisterForm>
-      </div>
-
-
+        <RegisterForm @form-dirty="handleFormDirty"></RegisterForm>
+      </div> -->
     </div>
   </main>
 </template>
 
 <script>
-import RegisterForm from './RegisterForm.vue';
-import LoginForm from './LoginForm.vue';
-import apiService from '@/services/apiService';
-import LandingDashboard from './LandingDashboard.vue';
+// import RegisterForm from './RegisterForm.vue';
+// import LoginForm from './LoginForm.vue';
+// import LandingDashboard from './LandingDashboard.vue';
 
+import apiService from '@/services/apiService';
+import checkForUnsavedChanges from '@/utils/unsavedChangesUtil';
 
 export default {
   name: 'MainContent',
   props: {},/* ['isLoggedIn'],*/
-  components: { RegisterForm, LoginForm, LandingDashboard },
+  // components: { RegisterForm, LoginForm, LandingDashboard },
   data() {
     return {
       isLoggedIn: true,
+      isDirty: false,
       formData: {
         username: '',
         email: '',
         password: ''
       }
     };
+  },
+  beforeRouteLeave(to, from, next) {
+    const shoudLeave = checkForUnsavedChanges(this.isDirty);
+    shoudLeave ? next() : next(false);
   },
   methods: { /* TODO move auth logic? */
     fetchData() {

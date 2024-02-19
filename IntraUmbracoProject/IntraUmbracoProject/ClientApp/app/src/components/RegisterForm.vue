@@ -6,15 +6,16 @@
     <form @submit.prevent="handleSubmit" class="registration-form">
       <div class="form-group">
         <label for="username" class="form-label">Username:</label>
-        <input type="text" id="username" v-model="formData.username" required class="form-control">
+        <input type="text" id="username" v-model="formData.username" required class="form-control" @input="markAsDirty">
       </div>
       <div class="form-group">
         <label for="email" class="form-label">Email:</label>
-        <input type="email" id="email" v-model="formData.email" required class="form-control">
+        <input type="email" id="email" v-model="formData.email" required class="form-control" @input="markAsDirty">
       </div>
       <div class="form-group">
         <label for="password" class="form-label">Password:</label>
-        <input type="password" id="password" v-model="formData.password" required class="form-control">
+        <input type="password" id="password" v-model="formData.password" required class="form-control"
+          @input="markAsDirty">
       </div>
       <AppButton type="submit" :buttonId="'registerButton'" :buttonText="'Register'"
         :styleClass="['m-3', 'nvi-btn', 'nvi-btn-primary']"></AppButton>
@@ -33,7 +34,7 @@ import AppButton from './AppButton.vue';
 import apiService from '@/services/apiService';
 
 export default {
-  name: 'MainContent',
+  name: 'RegisterForm',
   props: {},
   components: { AppButton },
   data() {
@@ -42,9 +43,11 @@ export default {
         username: '',
         email: '',
         password: ''
-      }
+      },
+      isDirty: false
     };
   },
+
   methods: { /* TODO move auth logic? */
     fetchData() {
       apiService.post("/user/CreateUser", {});  /* "/user/login" */
@@ -54,7 +57,23 @@ export default {
         console.log(response);
       });
     },
-  }
+    markAsDirty() {
+      this.isDirty = true;
+      this.$emit('form-dirty', this.isDirty);
+    },
+  },
+  //   beforeRouteLeave(to, from, next) {
+  //   if (this.isDirty) {
+  //     const answer = window.confirm('You have unsaved changes. Do you want to leave?');
+  //     if (answer) {
+  //       next();
+  //     } else {
+  //       next(false);
+  //     }
+  //   } else {
+  //     next();
+  //   }
+  // }
 }
 </script>
   
