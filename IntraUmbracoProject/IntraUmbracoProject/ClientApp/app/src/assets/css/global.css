@@ -1,4 +1,4 @@
-﻿@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap');
+﻿@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Montserrat:wght@700&family=Open+Sans:wght@400;600&family=Leckerli+One&display=swap');
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
 /* TODO: organize and use cscc*/
@@ -23,7 +23,11 @@ button {
     letter-spacing: 0.015em;
 }
 
-body, button, input, select, textarea {
+body,
+button,
+input,
+select,
+textarea {
     font-family: 'Nunito', sans-serif;
     font-weight: 300;
     letter-spacing: 0.015em;
@@ -51,21 +55,19 @@ h3 {
     line-height: 1.4;
 }
 
-a {
+p,
+a,
+.text-span {
     font-size: 1.2rem;
     margin-bottom: 1rem;
-    line-height: 1.5
-}
-
-p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    line-height: 0.5; /*1.5*/
+    line-height: 1.5;
 }
 
 .friendly-text {
-    font-family: 'Leckerli One', serif; /*consider Googles Lugrasimo, Style Script*/
+    font-family: 'Leckerli One', serif;
+    /*considering Googles Lugrasimo, Style Script*/
 }
+
 
 .flex-center {
     display: flex;
@@ -73,13 +75,9 @@ p {
     align-items: center;
 }
 
-.header, .footer {
+.header,
+.footer {
     padding: 1rem;
-}
-
-.main-content {
-    background-color: #F6F2E9;
-    padding: 1.5rem;
 }
 
 /* .nav-list {
@@ -87,7 +85,8 @@ p {
     padding-left: 0;
   } */
 
-  header, footer {
+header,
+footer {
     padding: 20px;
 }
 
@@ -97,7 +96,8 @@ p {
 }
 
 
-a, .nav-link,
+a,
+.nav-link,
 .nav-link:focus {
     text-decoration: none !important;
     color: #333 !important;
@@ -105,34 +105,37 @@ a, .nav-link,
 
 
 a:hover {
-  color: #1b887f;
+    color: #1b887f;
 }
 
 .nav-link:hover {
     transform: scale(1.1);
     color: #316259;
 }
-  
-  .nav-link.active {
-    color: #2d7265; 
-  }
 
-  .nav-link {
+.nav-link.active {
+    color: #2d7265;
+}
+
+.nav-link {
     display: inline-block;
     transition: transform 0.2s ease-in-out, color 0.2s ease;
-  }
+}
 
 
-::selection, ::-moz-selection {
+::selection,
+::-moz-selection {
     background-color: #1b887f;
     color: white;
 }
 
-img::selection, img::-moz-selection {
+img::selection,
+img::-moz-selection {
     background-color: rgba(27, 136, 127, 0.5);
 }
 
-img:focus, img:active {
+img:focus,
+img:active {
     outline: 2px solid #1b887f;
 }
 
@@ -163,13 +166,13 @@ img:focus, img:active {
     transition: background-color 0.3sease, box-shadow 0.2sease;
 }
 
-    .nvi-btn-primary:hover {
-        background-color: #290099;
-        box-shadow: 02px4pxrgba(0, 0, 0, 0.2);
-    }
+.nvi-btn-primary:hover {
+    background-color: #290099;
+    box-shadow: 02px4pxrgba(0, 0, 0, 0.2);
+}
 
 .nvi-btn-secondary {
-    background-color: #3ab49a;
+    background-color: #06b690;
     color: white;
     border: none;
     padding: 10px20px;
@@ -179,9 +182,9 @@ img:focus, img:active {
     transition: background-color 0.3sease;
 }
 
-    .nvi-btn-secondary:hover {
-        background-color: #23725a;
-    }
+.nvi-btn-secondary:hover {
+    background-color: #157558;
+}
 
 .nvi-btn-tertiary {
     background-color: #e7e7e7;
@@ -194,6 +197,23 @@ img:focus, img:active {
     transition: background-color 0.3sease;
 }
 
-    .nvi-btn-tertiary:hover {
-        background-color: #d4d4d4;
+.nvi-btn-tertiary:hover {
+    background-color: #d4d4d4;
+}
+
+
+@keyframes slideDown {
+    from {
+        opacity: 0;
+        transform: translateY(-20px);
     }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.smooth-landing {
+    animation: slideDown 0.8s ease-out forwards;
+}

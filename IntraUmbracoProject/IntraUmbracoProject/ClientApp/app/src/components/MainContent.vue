@@ -1,32 +1,36 @@
 <template>
   <main>
-    <div class="content">
-      <div  v-if="isLoggedIn" class="personal-message">
-      <h2>Welcome, {{ username }}!</h2>
-  <h3>What are you looking for today? </h3>
-</div>
-<div v-else> <!--Temporary demo solution, TODO route to pages instead etc--->
-  <LoginForm></LoginForm>
-<RegisterForm></RegisterForm>
+    <div class="main-content">
+      <div v-if="isLoggedIn">
+        <LandingDashboard></LandingDashboard>
 
-</div>
-</div>
+
+
+      </div>
+      <div v-else> <!--Temporary demo solution, TODO route to pages instead etc--->
+        <LoginForm></LoginForm>
+        <RegisterForm></RegisterForm>
+      </div>
+
+
+    </div>
   </main>
 </template>
 
 <script>
-// import AppButton from './AppButton.vue';
 import RegisterForm from './RegisterForm.vue';
 import LoginForm from './LoginForm.vue';
 import apiService from '@/services/apiService';
+import LandingDashboard from './LandingDashboard.vue';
+
 
 export default {
   name: 'MainContent',
   props: {},/* ['isLoggedIn'],*/
-  components: { RegisterForm, LoginForm},
+  components: { RegisterForm, LoginForm, LandingDashboard },
   data() {
     return {
-      isLoggedIn:false,
+      isLoggedIn: true,
       formData: {
         username: '',
         email: '',
@@ -39,7 +43,7 @@ export default {
       apiService.post("/user/login", {});
     },
     handleSubmit() {
-      apiService.post("/user/login", this.formData).then(response => { 
+      apiService.post("/user/login", this.formData).then(response => {
         console.log(response);
       });
     },
@@ -57,15 +61,15 @@ export default {
 
 <style scoped>
 main {
-  padding-top: 5rem;
-  padding-bottom: 5rem;
-  background-color: #eeeeee; /** or #e6e3e0, #F4F2EE */
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  background-color: #eeeeee;
+  /** or #e6e3e0, #F4F2EE */
 }
 
-.content {
-  max-width: 600px;
-  margin: 0 auto;
-  text-align: center;
-
+.main-content {
+  padding-top: 2rem;
+  padding-left: 2.5rem;
+  padding-right: 2.5rem;
 }
 </style>
