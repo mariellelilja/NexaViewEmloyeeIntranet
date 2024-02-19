@@ -1,7 +1,7 @@
 <template>
   <div class="login-form-container">
     <h2 class="form-title">Login to Employee Intranet</h2>
-    <form @submit.prevent="handleSubmit" class="login-form" >
+    <form @submit.prevent="handleSubmit" class="login-form row g-3 needs-validation" novalidate>
       <div class="form-group">
         <label for="username" class="form-label">Username: </label>
         <input type="text" id="username" v-model="formData.username" :class="{'input-error': errors.username}" required class="form-control">
@@ -16,14 +16,19 @@
         <input type="password" id="password" v-model="formData.password" :class="{'input-error': errors.password}" required class="form-control">
         <div v-if="errors.password" class="error-message">{{ errors.password }}</div>
       </div>
-      <AppButton :disabled="isLoading" type="submit" :buttonId="'loginButton'" :buttonText="'Log in'" :styleClass="['m-3','nvi-btn', 'nvi-btn-primary']" ></AppButton>
+      <div class="form-group">
+      <AppButton :disabled="isLoading" type="submit" :buttonId="'loginButton'" :buttonText="'Log in'" :styleClass="['nvi-btn', 'nvi-btn-primary']" ></AppButton>
       <div class="feedback-container">
         <LoadingIndicator :isLoading="isLoading" ></LoadingIndicator>
       </div>
+    </div>
     </form>
+    <div class="wide-container">
     <p class="mt-5 m-4">Not registered yet? </p>
     <!---TODO style btn-wide and set @click to route to login:-->
-    <AppButton  :buttonId="'toRegistrationBtn'" :buttonText="'Register'" :styleClass="['nvi-btn', 'nvi-btn-secondary', 'nvi-btn-wide']" ></AppButton>
+    <!--TODO, as it is internal website, should say 'Request an account', and backoffice should be set to only grant membership after admins approval-->
+    <AppButton  :buttonId="'toRegistrationBtn'" :buttonText="'Register'" :styleClass="['nvi-btn', 'nvi-btn-secondary']" ></AppButton>
+  </div>
   </div>
 </template>
 
@@ -83,6 +88,12 @@
 }
 
 .login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.wide-container {
   display: flex;
   flex-direction: column;
   gap: 1rem;

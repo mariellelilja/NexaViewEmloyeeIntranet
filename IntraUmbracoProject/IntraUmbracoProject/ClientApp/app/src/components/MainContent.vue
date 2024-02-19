@@ -59,7 +59,7 @@ export default {
 main {
   padding-top: 5rem;
   padding-bottom: 5rem;
-  background-color: #eee8de87; /** or #e6e3e0, #F4F2EE */
+  background-color: #eeeeee; /** or #e6e3e0, #F4F2EE */
 }
 
 .content {

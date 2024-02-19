@@ -1,6 +1,7 @@
 ﻿@import url('https://fonts.googleapis.com/css2?family=Nunito:wght@400;700&family=Montserrat:wght@700&family=Open+Sans:wght@400;600&display=swap');
 @import "~bootstrap/dist/css/bootstrap.min.css";
 
+/* TODO: organize and use cscc*/
 
 body {
     margin: 0;
@@ -62,6 +63,10 @@ p {
     line-height: 0.5; /*1.5*/
 }
 
+.friendly-text {
+    font-family: 'Leckerli One', serif; /*consider Googles Lugrasimo, Style Script*/
+}
+
 .flex-center {
     display: flex;
     justify-content: center;
@@ -73,7 +78,7 @@ p {
 }
 
 .main-content {
-    background-color: #ECEBED;
+    background-color: #F6F2E9;
     padding: 1.5rem;
 }
 
@@ -81,6 +86,10 @@ p {
     list-style: none;
     padding-left: 0;
   } */
+
+  header, footer {
+    padding: 20px;
+}
 
 .nav-item {
     display: inline-block;
@@ -99,19 +108,20 @@ a:hover {
   color: #1b887f;
 }
 
-    .nav-link:hover {
-        transform: scale(1.1);
-        transition: transform 0.2s ease-in-out;
-        color: #1b887f;
-    }
-
-    .nav-link.active {
-        /*TODO*/
-    }
-
-header, footer {
-    padding: 20px;
+.nav-link:hover {
+    transform: scale(1.1);
+    color: #316259;
 }
+  
+  .nav-link.active {
+    color: #2d7265; 
+  }
+
+  .nav-link {
+    display: inline-block;
+    transition: transform 0.2s ease-in-out, color 0.2s ease;
+  }
+
 
 ::selection, ::-moz-selection {
     background-color: #1b887f;
@@ -131,16 +141,15 @@ img:focus, img:active {
     padding: 0.75rem;
 }
 
-.nvi-btn-wide {
-    max-width: 500px;
+/* .nvi-btn-wide {
+    max-width: 500px important!;
     display: flex;
     flex-direction: column;
     font-size: 1rem;
-    max-width: 500px;
     margin: 0 auto;
-    padding-left: 20px;
-    padding-right: 20px;
-}
+    padding-left: 20px important!;
+    padding-right: 20px important!;
+} */
 
 .nvi-btn-primary {
     background-color: #3600cc;
