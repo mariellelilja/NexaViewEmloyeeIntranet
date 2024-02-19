@@ -2,6 +2,11 @@
 
 ### A fictive company's intranet build on Umbraco, Razor, and vue.JS, with automating scripts and CI/CD.
 
+### Automation ⚙🔄
+I have written scripts for:
+- automatic changing updated web resource references
+- automatic building and running the application (or do it manually, see steps below):
+
 ### Run as Umbraco with embedded Vue
 1. Navigate to vue application and build it
 ```
@@ -28,10 +33,6 @@ The file path should look like the following, with a new hash if files are chang
 cd IntraUmbracoProject\
 dotnet run
 ```
-
-### Double automation is in progress 😉⏳
-- automatic changing of these references
-- automatic building and running steps above.
 
 ### Run Vue frontend app separately
 
