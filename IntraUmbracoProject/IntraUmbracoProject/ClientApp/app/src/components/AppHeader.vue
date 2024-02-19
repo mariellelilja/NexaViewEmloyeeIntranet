@@ -8,15 +8,15 @@
       </div>
       <nav class="nav-bar">
         <ul class="nav-list mt-3">
-          <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+          <li class="nav-item"><router-link class="nav-link active" to="/">Home</router-link></li>
           <!--style menu links, add hovering and click response-->
-          <li class="nav-item"><a class="nav-link" href="#">News</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">People</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Documents</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">Resources</a></li>
+          <li class="nav-item"><router-link class="nav-link" to="/nvarticles">News</router-link></li>
+          <li class="nav-item"><router-link class="nav-link" to="/nvpeople">People</router-link></li>
+          <li class="nav-item"><router-link class="nav-link" to="/nvdocs">Documents</router-link></li>
+          <li class="nav-item"><router-link class="nav-link" to="/nvresources">Resources</router-link></li>
           <!--TODO: sub > IT Support, HR, Finance, Legal, etc -->
-          <li class="nav-item"><a class="nav-link" href="#">Social</a></li>
-          <li class="nav-item"><a class="nav-link" href="#">CoE</a></li>
+          <li class="nav-item"><router-link class="nav-link" to="/nvsocial">Social</router-link></li>
+          <li class="nav-item"><router-link class="nav-link" to="/nvcoe">CoE</router-link></li>
         </ul>
       </nav>
     </div>

@@ -4,7 +4,8 @@
     <form @submit.prevent="handleSubmit" class="login-form row g-3 needs-validation" novalidate>
       <div class="form-group">
         <label for="username" class="form-label">Username: </label>
-        <input type="text" id="username" v-model="formData.username" :class="{'input-error': errors.username}" required class="form-control">
+        <input type="text" id="username" v-model="formData.username" :class="{ 'input-error': errors.username }" required
+          class="form-control">
         <div v-if="errors.username" class="error-message">{{ errors.username }}</div>
       </div>
       <!-- <div class="form-group">
@@ -13,66 +14,69 @@
       </div> -->
       <div class="form-group">
         <label for="password" class="form-label">Password: </label>
-        <input type="password" id="password" v-model="formData.password" :class="{'input-error': errors.password}" required class="form-control">
+        <input type="password" id="password" v-model="formData.password" :class="{ 'input-error': errors.password }"
+          required class="form-control">
         <div v-if="errors.password" class="error-message">{{ errors.password }}</div>
       </div>
       <div class="form-group">
-      <AppButton :disabled="isLoading" type="submit" :buttonId="'loginButton'" :buttonText="'Log in'" :styleClass="['nvi-btn', 'nvi-btn-primary']" ></AppButton>
-      <div class="feedback-container">
-        <LoadingIndicator :isLoading="isLoading" ></LoadingIndicator>
+        <AppButton :disabled="isLoading" type="submit" :buttonId="'loginButton'" :buttonText="'Log in'"
+          :styleClass="['nvi-btn', 'nvi-btn-primary']"></AppButton>
+        <div class="feedback-container">
+          <LoadingIndicator :isLoading="isLoading"></LoadingIndicator>
+        </div>
       </div>
-    </div>
     </form>
     <div class="wide-container">
-    <p class="mt-5 m-4">Not registered yet? </p>
-    <!---TODO style btn-wide and set @click to route to login:-->
-    <!--TODO, as it is internal website, should say 'Request an account', and backoffice should be set to only grant membership after admins approval-->
-    <AppButton  :buttonId="'toRegistrationBtn'" :buttonText="'Register'" :styleClass="['nvi-btn', 'nvi-btn-secondary']" ></AppButton>
-  </div>
+      <p class="mt-5 m-4">Not registered yet? </p>
+      <!---TODO style btn-wide and set @click to route to login:-->
+      <!--TODO, as it is internal website, should say 'Request an account', and backoffice should be set to only grant membership after admins approval-->
+      <AppButton :buttonId="'toRegistrationBtn'" :buttonText="'Register'" :styleClass="['nvi-btn', 'nvi-btn-secondary']">
+      </AppButton>
+    </div>
   </div>
 </template>
 
 
   
-  <script>
-  import AppButton from './AppButton.vue';
-  import apiService from '@/services/apiService';
-  import LoadingIndicator from './LoadingIndicator.vue';
-  
-  export default {
-    name: 'MainContent',
-    props: {},
-    components: { AppButton, LoadingIndicator},
-    data() {
-      return {
-        formData: {
-          username: '',
-          // email: '',
-          password: ''
-        },
-        errors: {
-          username: 'This user does not exist', //hardcoded for demo purpose, until fixed
-          password: ''
-        },
-        isLoading: true,
-        errorMessage: ''
-      };
+<script>
+import AppButton from './AppButton.vue';
+import apiService from '@/services/apiService';
+import LoadingIndicator from './LoadingIndicator.vue';
+
+export default {
+  name: 'LoginForm',
+  props: {},
+  components: { AppButton, LoadingIndicator },
+  data() {
+    return {
+      formData: {
+        username: '',
+        // email: '',
+        password: ''
+      },
+      errors: {
+        username: 'This user does not exist', //hardcoded for demo purpose, until fixed
+        password: ''
+      },
+      isLoading: true,
+      errorMessage: ''
+    };
+  },
+  methods: { /* TODO move auth logic? */
+    fetchData() {
+      apiService.post("/user/login", {});
     },
-    methods: { /* TODO move auth logic? */
-      fetchData() {
-        apiService.post("/user/login", {});
-      },
-      handleSubmit() {
-        apiService.post("/user/login", this.formData).then(response => {
-          console.log(response);
-        });
-      },
-    }
+    handleSubmit() {
+      apiService.post("/user/login", this.formData).then(response => {
+        console.log(response);
+      });
+    },
   }
-  </script>
+}
+</script>
   
-  <style scoped>
-  .login-form-container {
+<style scoped>
+.login-form-container {
   max-width: 500px;
   margin: 0 auto;
   padding: 20px;
@@ -146,13 +150,13 @@
 
 /** TODO move */
 .input-error {
-  border-color: #ff3860; /* Red border color */
+  border-color: #ff3860;
+  /* Red border color */
 }
 
 .error-message {
-  color: #ff3860; /* Red text color */
+  color: #ff3860;
+  /* Red text color */
   margin-top: 0.25rem;
   font-size: 0.875rem;
-}
-
-  </style>
+}</style>
