@@ -1,16 +1,20 @@
 <template>
   <header class="site-header">
     <div class="header-content">
-    <h1 class="site-title">NexaView Employee Intranet</h1>
+
+      <div class="logo-container">
+        <img src="@/assets/nw-logo-white.png" alt="NexaView" class="company-logo">
+        <h1 class="site-title">Employee Intranet</h1>
+      </div>
     <nav class="nav-bar">
       <ul class="nav-list">
         <li class="nav-item"><a class="nav-link active" href="#">Home</a></li> <!--style menu links, add hovering and click response-->
         <li class="nav-item"><a class="nav-link" href="#">News</a></li>
         <li class="nav-item"><a class="nav-link" href="#">People</a></li>
         <li class="nav-item"><a class="nav-link" href="#">Documents</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Company resources</a></li> <!--TODO: sub > IT Support, HR, Finance, Legal, etc -->
-        <li class="nav-item"><a class="nav-link" href="#">Social events</a></li>
-        <li class="nav-item"><a class="nav-link" href="#">Center of Excellence</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">Resources</a></li> <!--TODO: sub > IT Support, HR, Finance, Legal, etc -->
+        <li class="nav-item"><a class="nav-link" href="#">Social</a></li>
+        <li class="nav-item"><a class="nav-link" href="#">CoE</a></li>
         </ul>
     </nav>
   </div>
@@ -62,7 +66,7 @@ export default {
 .site-header {
   padding: 10px 10px;
   position:relative;
-  background-color: #dedede;
+  background-color: #ffffff;
   min-height: 35vh;
   display: flex;
   justify-content: space-between;
@@ -89,7 +93,6 @@ export default {
 }
 
 @media (max-width: 768px) {
-  /* For smaller screens */
   .nav-list {
     display: none;
   }
@@ -97,5 +100,15 @@ export default {
     display: block;
   }}
 
+  .logo-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.company-logo {
+  height: 100px; /* Adjust based on your preference */
+  margin-right: 1rem;
+}
 
 </style>
