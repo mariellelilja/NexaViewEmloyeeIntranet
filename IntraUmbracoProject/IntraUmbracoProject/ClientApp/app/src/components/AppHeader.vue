@@ -79,7 +79,25 @@ export default {
   text-align: center;
 }
 
+
+
+.logo-container {
+  display: flex;
+  align-items: self-end;
+  justify-content: center;
+}
+
+.company-logo {
+  height: 90px;
+  margin-right: 0.5rem;
+}
+
 @media (max-width: 768px) {
+  .site-title {
+    font-weight: 500;
+    font-size: 30px;
+  }
+
   .nav-list {
     display: none;
   }
@@ -87,18 +105,12 @@ export default {
   .mobile-menu-icon {
     display: block;
   }
-}
 
-.logo-container {
-  display: flex;
-  align-items: self-end;
-  /*  */
-  justify-content: center;
-}
+  .company-logo {
+    height: 70px;
+    margin-right: 0.25rem;
+    padding: 0.5rem;
+  }
 
-.company-logo {
-  height: 90px;
-  /* Adjust based on your preference */
-  margin-right: 0.5rem;
 }
 </style>

@@ -3,7 +3,7 @@
     <p v-if="isLoggedIn">
       <span class="online-icon"></span>
       <span class="full-text">Logged in as {{ username }}</span>
-      <span class="short-text">Logged in</span>
+      <span class="short-text">Logged in</span> <!--for smaller viewports-->
     </p>
     <p v-else><a href="/login">Log in</a> </p>
   </div>
@@ -45,6 +45,11 @@ export default {
 
 .full-text {
   display: inline;
+}
+
+.short-text,
+.full-text {
+  font-size: 1rem;
 }
 
 .short-text {
