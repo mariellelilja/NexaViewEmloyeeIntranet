@@ -2,7 +2,7 @@
   <div class="articles-grid">
     <div class="nv-article" v-for="article in latestArticles" :key="article.id">
       <div class="article-content">
-        <h3>{{ article.title }}</h3>
+        <h3 class="colored-title">{{ article.title }}</h3>
         <p>{{ article.summary }}</p>
       </div>
       <div class="article-footer">
@@ -61,7 +61,13 @@ export default {
   /* flex: 3; */
 }
 
-@media (max-width: 768px) {
+/* @media (max-width: 768px) {
+  .articles-grid {
+    grid-template-columns: 1fr;
+  }
+} */
+
+@media (max-width: 1200px) {
   .articles-grid {
     grid-template-columns: 1fr;
   }
@@ -111,9 +117,7 @@ a {
 
 /* Fun effect with lower underline */
 a:hover {
-  text-decoration: underline !important;
-  text-decoration-color: #4f0080c5 !important;
-  text-underline-offset: 4px;
+  text-underline-offset: 5px;
 }
 
 .posted-date {
@@ -123,6 +127,7 @@ a:hover {
   margin-bottom: 0rem !important;
 }
 
+
 /* Dynamical sizing (calc with viewpotr): */
 /* .nv-article h3 {
   font-size: calc(1rem + 0.5vw);
@@ -130,5 +135,6 @@ a:hover {
 
 .nv-article p {
   font-size: calc(14px + 0.5vw);
-} */</style>
+} */
+</style>
   

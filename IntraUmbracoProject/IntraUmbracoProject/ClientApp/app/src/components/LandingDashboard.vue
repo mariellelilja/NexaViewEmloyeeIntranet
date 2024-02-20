@@ -84,6 +84,12 @@ export default {
     font-size: 30px;
 }
 
+@media (max-width: 768px) {
+    .subheading {
+        font-size: 20px;
+    }
+}
+
 .dashboard-flex {
     display: flex;
     flex-direction: row;
@@ -101,19 +107,7 @@ h4 {
 
 .sidebar {
     flex: 1;
-    /* Adjusts the sidebar width to 1/4 of the container */
     padding-left: 4rem;
-}
-
-@media (max-width: 768px) {
-    .dashboard-flex {
-        flex-direction: column;
-    }
-
-    .main-section,
-    .sidebar {
-        flex: none;
-    }
 }
 
 .upcoming-events ul {
@@ -135,5 +129,19 @@ h4 {
 
 .event-title {
     margin-left: 10px;
+}
+
+@media (max-width: 768px) {
+    .dashboard-flex {
+        flex-direction: column;
+    }
+
+    .main-section,
+    .sidebar {
+        /* flex: none; */
+        padding-left: 0rem;
+
+    }
+
 }
 </style>

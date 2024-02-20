@@ -55,12 +55,23 @@ h3 {
     line-height: 1.4;
 }
 
+h1,
+h2,
+h3 {
+    color: #2c3e50;
+}
+
 p,
 a,
 .text-span {
     font-size: 1.2rem;
     margin-bottom: 1rem;
     line-height: 1.5;
+}
+
+.colored-title p {
+    font-weight: 600;
+    color: #316259;
 }
 
 .friendly-text {
@@ -97,24 +108,31 @@ footer {
 
 
 a,
-.nav-link,
-.nav-link:focus {
+.nav-link {
     text-decoration: none !important;
     color: #333 !important;
 }
 
-
 a:hover {
-    color: #1b887f;
+    text-decoration: underline !important;
+    text-decoration-color: #4f0080c5 !important;
+    text-underline-offset: 4px;
+}
+
+a:active {
+    text-decoration: underline !important;
+    text-decoration-color: #a804a6c5 !important;
+    text-underline-offset: 4px;
 }
 
 .nav-link:hover {
+    text-decoration: none !important;
     transform: scale(1.1);
-    color: #316259;
+    color: #2c715a !important;
 }
 
 .nav-link.active {
-    color: #2d7265;
+    color: #4a9f41;
 }
 
 .nav-link {
