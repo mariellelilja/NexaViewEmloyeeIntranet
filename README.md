@@ -2,7 +2,14 @@
 
 ### A fictive company's intranet build on Umbraco, Razor, and vue.JS, with automating scripts and CI/CD.
 
-### Automation ⚙🔄
+### Iteration Backlog
+[NexaView Employee Intranet Iterations](https://github.com/users/mariellelilja/projects/12/views/1?pane=info)
+([]([)
+
+### CI/CD runs 🔄
+[Project Workflows, Github Actions](https://github.com/mariellelilja/IntraHub/actions)
+
+### Automation ⚙
 I have written scripts for:
 - automatic changing updated web resource references
 - automatic building and running the application (or do it manually, see steps below):
