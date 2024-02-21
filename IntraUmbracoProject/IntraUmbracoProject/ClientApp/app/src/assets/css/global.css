@@ -233,5 +233,5 @@ img:active {
 }
 
 .smooth-landing {
-    animation: slideDown 0.8s ease-out forwards;
+    animation: slideDown 3s ease-out forwards;
 }
