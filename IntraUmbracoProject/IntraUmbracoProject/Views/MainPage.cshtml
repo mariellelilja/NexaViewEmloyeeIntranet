@@ -7,18 +7,37 @@
     Layout = null;
 }
 
+@{
+    var allCssAssets = AssetHelper.GetAllAssetPaths("css");
+    var allJsAssets = AssetHelper.GetAllAssetPaths("js");
+    var allImageAssets = AssetHelper.GetAllAssetPaths("img");
+}
+
 
 <!DOCTYPE html>
 <html>
 <head>
-    <link rel="stylesheet" href="@AssetHelper.GetAssetPath("css", "app.*.css")">
-    <link rel="stylesheet" href="@AssetHelper.GetAssetPath("css", "chunk-vendors.*.css")">
+@*     <link rel="stylesheet" href="@AssetHelper.GetAssetPath("css", "app.*.css")">
+    <link rel="stylesheet" href="@AssetHelper.GetAssetPath("css", "chunk-vendors.*.css")"> *@
+    @foreach (var assetPath in allCssAssets)
+    {
+        @Html.Raw(AssetHelper.GenerateHtmlTagForAsset(assetPath))
+    }
 </head>
 <body>
     <div id="app">
         <!-- Vue app  -->
+        @foreach (var assetPath in allImageAssets)
+        {
+            @Html.Raw(AssetHelper.GenerateHtmlTagForAsset(assetPath))
+        }
+
     </div>
-    <script src="@AssetHelper.GetAssetPath("js", "app.*.js")"></script>
-    <script src="@AssetHelper.GetAssetPath("js", "chunk-vendors.*.js")"></script>
+    @foreach (var assetPath in allJsAssets)
+    {
+        @Html.Raw(AssetHelper.GenerateHtmlTagForAsset(assetPath))
+    }
+@*     <script src="@AssetHelper.GetAssetPath("js", "app.*.js")"></script>
+    <script src="@AssetHelper.GetAssetPath("js", "chunk-vendors.*.js")"></script> *@
 </body>
 </html>
