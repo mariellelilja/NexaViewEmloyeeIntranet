@@ -29,6 +29,11 @@ public class UserController : UmbracoApiController
     {
         try
         {
+            if (!ModelState.IsValid)
+            {
+                return BadRequest(ModelState);
+            }
+
             var existingUser = _memberService.GetByEmail(model.Email);
             if (existingUser != null)
             {
@@ -67,7 +72,6 @@ public class UserController : UmbracoApiController
                 return StatusCode(423, "User account is locked out.");
             }
             return BadRequest("Invalid login attempt");
-
         }
         catch (Exception ex)
         {

@@ -196,3 +196,5 @@ bld/
 *.app
 
 *.tmp
+IntraUmbracoProject/IntraUmbracoProject/umbraco/Data/TEMP/*
+IntraUmbracoProject/IntraUmbracoProject/wwwroot/*
