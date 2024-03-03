@@ -30,8 +30,8 @@
       <p class="mt-5 m-4">Not registered yet? </p>
       <!---TODO style btn-wide and set @click to route to login:-->
       <!--TODO, as it is internal website, should say 'Request an account', and backoffice should be set to only grant membership after admins approval-->
-      <AppButton :buttonId="'toRegistrationBtn'" :buttonText="'Register'" :styleClass="['nvi-btn', 'nvi-btn-secondary']">
-      </AppButton>
+      <AppButton buttonId="toRegistrationBtn" buttonText="Register" styleClass="nvi-btn nvi-btn-secondary"
+        @click="handleRegister"></AppButton>
     </div>
   </div>
 </template>
@@ -55,10 +55,10 @@ export default {
         password: ''
       },
       errors: {
-        username: 'This user does not exist', //hardcoded for demo purpose, until fixed
+        username: '',//'This user does not exist', //hardcoded for demo purpose, until fixed
         password: ''
       },
-      isLoading: true,
+      isLoading: false,
       errorMessage: ''
     };
   },
@@ -159,4 +159,5 @@ export default {
   /* Red text color */
   margin-top: 0.25rem;
   font-size: 0.875rem;
-}</style>
+}
+</style>

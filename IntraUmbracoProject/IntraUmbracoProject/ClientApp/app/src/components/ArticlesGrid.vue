@@ -136,5 +136,10 @@ a:hover {
 .nv-article p {
   font-size: calc(14px + 0.5vw);
 } */
+
+h3 {
+  font-weight: 600;
+  color: #316259 !important;
+}
 </style>
   
