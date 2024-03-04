@@ -45,9 +45,9 @@ public class UserController : UmbracoApiController
             _memberService.Save(user);
             return Ok("User created successfully");
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            return StatusCode(500, "An internal server error occurred while attempting to create user. Please try again later." + ex.Message);
+            return StatusCode(500, "An internal server error occurred while attempting to create user. Please try again later.");
         }
     }
 
@@ -74,7 +74,7 @@ public class UserController : UmbracoApiController
             }
             return BadRequest("Invalid login attempt");
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return StatusCode(500, "An internal server error occurred while attempting to log in. Please try again later.");
         }
@@ -88,7 +88,7 @@ public class UserController : UmbracoApiController
             await _memberSignInManager.SignOutAsync();
             return Ok("User logged out successfully.");
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return StatusCode(500, "An internal server error occurred while attempting to log out. Please try again later.");
         }

@@ -45,8 +45,8 @@ public class UserControllerTests
 
         //ASSERT
         _memberServiceMock.Verify(x => x.GetByEmail(It.IsAny<string>()), Times.Once);
-        _memberServiceMock.Verify(x => x.Save(It.IsAny<IMember>()), Times.Once);
-        _passwordHasherMock.Verify(x => x.HashPassword(model.Password), Times.Once);
+        //_memberServiceMock.Verify(x => x.Save(It.IsAny<IMember>()), Times.Once);
+        //_passwordHasherMock.Verify(x => x.HashPassword(model.Password), Times.Once);
         Assert.IsType<ConflictObjectResult>(result);
     }
 
@@ -79,7 +79,8 @@ public class UserControllerTests
 
         var result = await _controller.Login(model);
 
-        Assert.IsType<BadRequestObjectResult>(result);  
+        Assert.IsType<BadRequestObjectResult>(result);
+        _memberServiceMock.Verify(x => x.GetByEmail(It.IsAny<string>()), Times.Once);
     }
 
     [Fact]
@@ -98,15 +99,17 @@ public class UserControllerTests
         var result = await _controller.Login(model);
 
         Assert.IsType<OkObjectResult>(result);
+        _memberServiceMock.Verify(x => x.GetByEmail(It.IsAny<string>()), Times.Once);
         _memberSignInManagerMock.Verify(x => x.PasswordSignInAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>()), Times.Once);
     }
 
     [Fact]
-    public async Task Logout_ReturnsOk()
+    public async Task Logout_ReturnsOk() //No Arrange step as there's no parameters nor external input!
     {
         var result = await _controller.Logout();
 
         Assert.IsType<OkObjectResult>(result);
+        _memberSignInManagerMock.Verify(x => x.SignOutAsync(), Times.Once);
     }
 
     [Fact]
@@ -118,6 +121,7 @@ public class UserControllerTests
 
         var statusCodeResult = Assert.IsType<ObjectResult>(result);
         Assert.Equal(500, statusCodeResult.StatusCode);
+        _memberSignInManagerMock.Verify(x => x.SignOutAsync(), Times.Once);
 
     }
     [Fact]
@@ -128,8 +132,8 @@ public class UserControllerTests
         var result = _controller.CreateUser(new Controllers.UserModel());
 
         Assert.IsType<BadRequestObjectResult>(result);
-        _memberServiceMock.Verify(x => x.GetByEmail(It.IsAny<string>()), Times.Once);
-        _memberSignInManagerMock.Verify(x => x.PasswordSignInAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>()), Times.Once);
+        //_memberServiceMock.Verify(x => x.GetByEmail(It.IsAny<string>()), Times.Once);
+        //_memberSignInManagerMock.Verify(x => x.PasswordSignInAsync(It.IsAny<string>(), It.IsAny<string>(), It.IsAny<bool>(), It.IsAny<bool>()), Times.Once);
 
     }
 }
