@@ -1,14 +1,15 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using System.ComponentModel.DataAnnotations;
 using Umbraco.Cms.Core.Security;
 using Umbraco.Cms.Core.Services;
 using Umbraco.Cms.Web.Common.Controllers;
 using Umbraco.Cms.Web.Common.Security;
 
-
 namespace IntraUmbracoProject.Controllers;
 
 [Route("api2/[controller]")]
 [ApiController]
+
 public class UserController : UmbracoApiController
 {
     private IMemberService _memberService;
@@ -37,16 +38,16 @@ public class UserController : UmbracoApiController
             var existingUser = _memberService.GetByEmail(model.Email);
             if (existingUser != null)
             {
-                return BadRequest("User with the given email already exists.");
+                return Conflict("User with the given email already exists.");
             }
             var user = _memberService.CreateMemberWithIdentity(model.Username, model.Email, "Member");
             user.RawPasswordValue = _passwordHasher.HashPassword(model.Password);
             _memberService.Save(user);
             return Ok("User created successfully");
         }
-        catch (Exception ex)
+        catch (Exception)
         {
-            return StatusCode(500, "An internal server error occurred while attempting to create user. Please try again later." + ex.Message);
+            return StatusCode(500, "An internal server error occurred while attempting to create user. Please try again later.");
         }
     }
 
@@ -73,7 +74,7 @@ public class UserController : UmbracoApiController
             }
             return BadRequest("Invalid login attempt");
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return StatusCode(500, "An internal server error occurred while attempting to log in. Please try again later.");
         }
@@ -87,7 +88,7 @@ public class UserController : UmbracoApiController
             await _memberSignInManager.SignOutAsync();
             return Ok("User logged out successfully.");
         }
-        catch (Exception ex)
+        catch (Exception)
         {
             return StatusCode(500, "An internal server error occurred while attempting to log out. Please try again later.");
         }
@@ -96,7 +97,14 @@ public class UserController : UmbracoApiController
 
 public class UserModel
 {
+    [Required]
     public string Username { get; set; }
+
+    [Required]
+    [DataType(DataType.Password)]
     public string Password { get; set; }
+
+    [Required]
+    [EmailAddress]
     public string Email { get; set; }
 }
