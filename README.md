@@ -8,6 +8,10 @@
 
 ### CI/CD runs 🔄
 [Project Workflows, Github Actions](https://github.com/mariellelilja/IntraHub/actions)
+[![.NET](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/dotnet.yml/badge.svg)](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/dotnet.yml)
+[![CodeQL](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/codeql.yml/badge.svg)](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/codeql.yml)
+[![Node.js CI](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/node.js.yml/badge.svg)](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/node.js.yml)
+[![Vue.s CI](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/custom-vue-ci.yml/badge.svg)](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/custom-vue-ci.yml)
 
 ### Automation ⚙
 I have written scripts for:
