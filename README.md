@@ -6,7 +6,7 @@
 [NexaView Employee Intranet Iterations](https://github.com/users/mariellelilja/projects/12/views/1?pane=info)
 
 
-### CI/CD runs 🔄
+### CI runs 🔄
 [![.NET](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/dotnet.yml/badge.svg)](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/dotnet.yml)
 [![CodeQL](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/codeql.yml/badge.svg)](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/codeql.yml)
 [![Node.js CI](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/node.js.yml/badge.svg)](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/node.js.yml)
