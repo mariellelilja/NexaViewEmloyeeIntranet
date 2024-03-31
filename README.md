@@ -13,7 +13,7 @@
 [![Vue.s CI](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/custom-vue-ci.yml/badge.svg)](https://github.com/mariellelilja/NexaViewEmloyeeIntranet/actions/workflows/custom-vue-ci.yml)
 </br>All -> [Project Workflows, Github Actions](https://github.com/mariellelilja/IntraHub/actions)
 
-### Automation ⚙
+### More Automation ⚙
 I have written scripts for:
 - automatic changing updated web resource references
 - automatic building and running the application (or do it manually, see steps below):
